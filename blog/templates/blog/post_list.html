@@ -7,17 +7,12 @@
         <header>
             <h1><a href="/">MKays awesome blog</a></h1>
         </header>
-
+    {% for post in posts %}
         <article>
-            <time>published: 02.06.2023, 16:23</time>
-            <h2><a href="">This is my first post</a></h2>
-            <p>This is my first post. Read it, check it out, be inspired!</p>
+            <time>published: {{ post.published_date }}</time>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
         </article>
-
-        <article>
-            <time>published: 14.06.2014, 12:14</time>
-            <h2><a href="">This is my second post</a></h2>
-            <p>Never liked latin. Why would I learn latin? One of the only things I would not repeat in my life.</p>
-        </article>
+    {% endfor %}
     </body>
 </html>
